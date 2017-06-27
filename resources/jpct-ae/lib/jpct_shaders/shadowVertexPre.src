@@ -1,0 +1,6 @@
+
+uniform mat4 shadowModelViewMatrix, shadowProjectionMatrix;
+uniform float shadowNearPlane, shadowFarPlane;
+uniform vec4 shadowAmbientColor;
+varying vec4 shadowCoord;
+varying vec4 shadowColor;

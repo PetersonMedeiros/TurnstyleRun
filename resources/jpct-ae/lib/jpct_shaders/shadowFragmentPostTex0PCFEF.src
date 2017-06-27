@@ -1,0 +1,32 @@
+
+vec4 _vertexColorShadow=vertexColor;
+vec2 _sc=clamp((shadowCoord.xy / shadowCoord.w + 1.0) / 2.0, 0.0, 1.0);
+
+if (shadowCoord.w > 0.0) {
+	float _total = (shadowFilterSize*2.0+1.0);
+	_total*=_total;
+	float _texelSize=1.0/shadowMapSize;
+	float _cnt=0.0;
+	
+	for (float x=-shadowFilterSize; x<=shadowFilterSize; x++) {
+		for (float y=-shadowFilterSize; y<=shadowFilterSize; y++) {
+			if (unpackFloat(textureUnit1, _sc + vec2(x,y)*_texelSize) < shadowCoord.z) {
+				_cnt += 1.0;
+			}
+		}
+	}
+	
+	_cnt /= _total;
+	
+	float mixu=min(clamp(_sc.x, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.x, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+	float mixv=min(clamp(_sc.y, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.y, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+	float mix=min(mixu, mixv);
+
+	if (mix<_cnt) {
+		_cnt=mix;
+	}
+	
+	_vertexColorShadow=shadowColor*_cnt+vertexColor*(1.0-_cnt);
+}
+			
+			

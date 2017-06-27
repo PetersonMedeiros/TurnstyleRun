@@ -1,0 +1,5 @@
+
+shadowCoord = shadowProjectionMatrix * shadowModelViewMatrix * position;
+shadowCoord.z = (shadowCoord.z - shadowNearPlane) / (shadowFarPlane - shadowNearPlane);
+shadowColor = shadowAmbientColor;
+

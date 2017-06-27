@@ -1,0 +1,26 @@
+
+int _textureCountShadow=textureCount-1;
+vec4 _vertexColorShadow=vertexColor;
+
+if (shadowCoord.w > 0.0) {
+	float _depth=0.0;	
+	vec2 _sc=clamp((shadowCoord.xy / shadowCoord.w + 1.0) / 2.0, 0.0, 1.0);
+	if (_textureCountShadow==1) { 
+		_depth=unpackFloat(textureUnit1, _sc); 
+	}
+	else if (_textureCountShadow==2) { 
+		_depth=unpackFloat(textureUnit2, _sc); 
+	}
+	else if (_textureCountShadow==3) { 
+		_depth=unpackFloat(textureUnit3, _sc); 
+	}
+	if (_depth<shadowCoord.z) {
+		float mixu=min(clamp(_sc.x, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.x, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+		float mixv=min(clamp(_sc.y, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.y, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+		float mix=min(mixu, mixv);
+		_vertexColorShadow=shadowColor*mix+vertexColor*(1.0-mix);
+		
+	}
+}
+			
+			

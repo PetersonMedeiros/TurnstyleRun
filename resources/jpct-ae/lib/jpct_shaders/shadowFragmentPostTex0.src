@@ -1,0 +1,13 @@
+
+vec4 _vertexColorShadow=vertexColor;
+vec2 _sc=clamp((shadowCoord.xy / shadowCoord.w + 1.0) / 2.0, 0.0, 1.0);
+
+if (shadowCoord.w > 0.0 && unpackFloat(textureUnit1, _sc) < shadowCoord.z) {
+	if (shadowDisableLights!=0) {
+		_vertexColorShadow=shadowColor;
+	} else {
+		_vertexColorShadow=shadowColor+vertexColor-ambientColor;
+	}
+}
+			
+			

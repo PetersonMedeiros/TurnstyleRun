@@ -1,0 +1,23 @@
+
+varying vec4 shadowCoord;
+varying vec4 shadowColor;
+uniform int shadowDisableLights;
+uniform vec4 ambientColor;
+
+uniform float shadowFilterSize;
+uniform float shadowMapSize;
+uniform float shadowEgdeRange;
+
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+const vec4 UNPACK_FACTORS = vec4(1.0 / (256.0 * 256.0 * 256.0), 1.0 / (256.0 * 256.0), 1.0 / 256.0, 1.0);
+#else
+const vec3 UNPACK_FACTORS = vec3(1.0, 1.0 / 256.0, 1.0 / 256.0 / 256.0) * 255.0 / 128.0;
+#endif
+float unpackFloat(sampler2D texture, vec2 coord){
+	#ifdef GL_FRAGMENT_PRECISION_HIGH
+	return dot(texture2D(texture, coord), UNPACK_FACTORS);
+	#else
+	return dot(texture2D(texture, coord).rgb, UNPACK_FACTORS);
+	#endif
+}
+

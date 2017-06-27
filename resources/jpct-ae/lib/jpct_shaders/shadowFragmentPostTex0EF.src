@@ -1,0 +1,14 @@
+
+vec4 _vertexColorShadow=vertexColor;
+vec2 _sc=clamp((shadowCoord.xy / shadowCoord.w + 1.0) / 2.0, 0.0, 1.0);
+
+if (shadowCoord.w > 0.0 && unpackFloat(textureUnit1, _sc) < shadowCoord.z) {
+	if (shadowDisableLights!=0) {
+		float mixu=min(clamp(_sc.x, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.x, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+		float mixv=min(clamp(_sc.y, 0.0, shadowEgdeRange)/shadowEgdeRange, (1.0-clamp(_sc.y, 1.0-shadowEgdeRange, 1.0))/shadowEgdeRange);
+		float mix=min(mixu, mixv);
+		_vertexColorShadow=shadowColor*mix+vertexColor*(1.0-mix);
+	}
+}
+			
+			

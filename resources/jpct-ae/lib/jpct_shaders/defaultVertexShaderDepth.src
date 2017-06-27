@@ -1,0 +1,15 @@
+uniform mat4 modelViewProjectionMatrix;
+
+attribute vec4 position;
+attribute vec2 texture0;
+
+uniform mat4 textureMatrix;
+
+varying vec4 vPosition;
+varying vec2 texCoord;
+
+void main(){
+	texCoord = (textureMatrix * vec4(texture0, 0, 1)).xy;
+	vPosition = modelViewProjectionMatrix * position;
+	gl_Position = vPosition;
+}
