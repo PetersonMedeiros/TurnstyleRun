@@ -29,19 +29,22 @@ public class MainCharacter {
     private FloatBuffer _vertexBuffer;
     private FloatBuffer _colorBuffer;
 
+    private int mMVPMatrixHandle;
+    private final int mProgram = GLES20.glCreateProgram();
+
     private int _nrOfVertices = 0;
 
     private int pos = 0;
 
     float[] coords = {
-             0.25f, -1.80f, -0.14f, //0
-             0.25f, -1.25f, -0.14f, //1
-            -0.25f, -1.80f, -0.14f, //2
-            -0.25f, -1.25f, -0.14f, //3
-             0.25f, -1.80f, -0.13f, //4
-             0.25f, -1.25f, -0.13f, //5
-            -0.25f, -1.80f, -0.13f, //6
-            -0.25f, -1.25f, -0.13f  //7
+             0.25f, -1.80f, 0.2f, //0
+             0.25f, -1.25f, 0.2f, //1
+            -0.25f, -1.80f, 0.2f, //2
+            -0.25f, -1.25f, 0.2f, //3
+             0.25f, -1.80f, 0f, //4
+             0.25f, -1.25f, 0f, //5
+            -0.25f, -1.80f, 0f, //6
+            -0.25f, -1.25f, 0f  //7
     };
 
     float[] colors = {
@@ -96,7 +99,9 @@ public class MainCharacter {
         _colorBuffer.position(0);
     }
 
-    public void draw(GL10 gl) {
+    public void draw(GL10 gl, float[] mvpMatrix) {
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
+
         // define the vertices we want to draw
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, _vertexBuffer);
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, _colorBuffer);
