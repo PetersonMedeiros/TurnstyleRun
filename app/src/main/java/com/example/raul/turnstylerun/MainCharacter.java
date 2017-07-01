@@ -34,7 +34,7 @@ public class MainCharacter {
 
     private int _nrOfVertices = 0;
 
-    private int pos = 0;
+    public int pos = 0;
 
     float[] coords = {
              0.25f, -1.80f, 0.2f, //0
@@ -115,7 +115,7 @@ public class MainCharacter {
         if(pos <= -18)
             return;
         for(int i=0;i< coords.length;i+=3){
-            coords[i] -= 0.75f/15;
+            coords[i] += 0.75f/15;
         }
         ByteBuffer vbb = ByteBuffer.allocateDirect(coords.length * 4);
         vbb.order(ByteOrder.nativeOrder());
@@ -129,7 +129,7 @@ public class MainCharacter {
         if(pos >= 18)
             return;
         for(int i=0;i< coords.length;i+=3){
-            coords[i] += 0.75f/15;
+            coords[i] -= 0.75f/15;
         }
         ByteBuffer vbb = ByteBuffer.allocateDirect(coords.length * 4);
         vbb.order(ByteOrder.nativeOrder());

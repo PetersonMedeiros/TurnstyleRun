@@ -23,7 +23,7 @@ public class Surface extends GLSurfaceView {
     public Surface(Context context){
         super(context);
 
-        mRenderer = new com.example.raul.turnstylerun.Renderer(context);
+        mRenderer = new com.example.raul.turnstylerun.Renderer(context, this);
 
         // Set the Renderer for drawing on the GLSurfaceView
         setRenderer(mRenderer);

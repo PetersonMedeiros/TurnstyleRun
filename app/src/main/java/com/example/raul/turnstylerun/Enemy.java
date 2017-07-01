@@ -32,7 +32,7 @@ class Faces{
     }
 }
 
-public class Enemy {
+public class Enemy extends Thread{
 
     Context context;
 
@@ -63,6 +63,8 @@ public class Enemy {
 
     private int pos = 0;
 
+    public int goal;
+
     boolean isVisible = true;
 
     private final String vertexShaderCode =
@@ -81,14 +83,34 @@ public class Enemy {
     private int mMVPMatrixHandle;
     private final int mProgram = GLES20.glCreateProgram();
 
+    Renderer r;
 
+    boolean running = true;
+    boolean ganhou = false;
+    int animacao;
 
-
-    public Enemy(Context context) {
+    public Enemy(Context context, Renderer r) {
         this.context = context;
         loadObjFile();
+        this.r = r;
 
         Log.d("LOAD DEU CERTO", "FUCK YEAH");
+    }
+
+    @Override
+    public void run(){
+        long time = System.currentTimeMillis();
+        while(running){
+            long tempoAtual = System.currentTimeMillis();
+            if (tempoAtual >= time + 5) {
+                time = tempoAtual;
+                goDown(r.mainChar.pos);
+                if(animacao > 0){
+                    rotate();
+                    animacao--;
+                }
+            }
+        }
     }
 
     public void draw(GL10 gl, float[] mvpMatrix) {
@@ -103,19 +125,59 @@ public class Enemy {
 
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, _vertexBuffer);
         gl.glNormalPointer(GL10.GL_FLOAT, 0, _normalBuffer);
+        float rAux = 0;
+        if(goal == 0)
+            rAux = rotation;
 
         gl.glTranslatef(posX, posY, posZ);
-        gl.glRotatef(rotation, 0, 0, 1);
+        gl.glRotatef(rAux, 0, 0, 1);
 
         // finally draw the vertices
         gl.glDrawElements(GL10.GL_TRIANGLES, _nrOfVertices, GL10.GL_UNSIGNED_SHORT, _indexBuffer);
         //gl.glDrawArrays(GL10.GL_TRIANGLES, 0, _nrOfVertices);
 
-        gl.glRotatef(-rotation, 0, 0, 1);
+        gl.glRotatef(-rAux, 0, 0, 1);
         gl.glTranslatef(-posX,-posY,-posZ);
+
+        rAux = 0;
+        if(goal == 1)
+            rAux = rotation;
+
+        goLeft();
+        gl.glTranslatef(posX, posY, posZ);
+        gl.glRotatef(rAux, 0, 0, 1);
+
+        // finally draw the vertices
+        gl.glDrawElements(GL10.GL_TRIANGLES, _nrOfVertices, GL10.GL_UNSIGNED_SHORT, _indexBuffer);
+        //gl.glDrawArrays(GL10.GL_TRIANGLES, 0, _nrOfVertices);
+
+        gl.glRotatef(-rAux, 0, 0, 1);
+        gl.glTranslatef(-posX,-posY,-posZ);
+        goRight();
+
+        rAux = 0;
+        if(goal == 2)
+            rAux = rotation;
+
+        goRight();
+        gl.glTranslatef(posX, posY, posZ);
+        gl.glRotatef(rAux, 0, 0, 1);
+
+        // finally draw the vertices
+        gl.glDrawElements(GL10.GL_TRIANGLES, _nrOfVertices, GL10.GL_UNSIGNED_SHORT, _indexBuffer);
+        //gl.glDrawArrays(GL10.GL_TRIANGLES, 0, _nrOfVertices);
+
+        gl.glRotatef(-rAux, 0, 0, 1);
+        gl.glTranslatef(-posX,-posY,-posZ);
+        goLeft();
     }
 
-    public void goDown() {
+    public void goUp(int val){
+        posY += 0.01f * val;
+        posZ += 0.0015f * val;
+    }
+
+    public void goDown(int charPos) {
 
 //        for (int i = 1; i < vertices.size(); i += 3) {
 //            vertices.set(i, vertices.get(i) - 0.01f);
@@ -136,7 +198,18 @@ public class Enemy {
         posY -= 0.01f;
         posZ -= 0.0015f;
 
-        if (posY < -4.00f) isVisible = false;
+
+
+        if(posY < -1f){
+            Log.d(Integer.toString(charPos), Integer.toString(goal));
+            if((goal == 1 && charPos < -6) || (goal == 0 && charPos <6 && charPos >= -6 ) || (goal == 2 && charPos >= 6)){
+                this.animacao = 10;
+                ganhou = true;
+            }else if(!ganhou){
+                r.rThread.running = false;
+            }
+        }
+        if (posY < -2.50f) isVisible = false;
     }
 
     public void rotate(){
@@ -144,41 +217,43 @@ public class Enemy {
     }
 
     public void goLeft(){
-        for (int i = 0; i < vertices.size(); i += 3) {
-            vertices.set(i, vertices.get(i) - 0.55f);
-        }
-        ByteBuffer vbb = ByteBuffer.allocateDirect(faces.size() * 4 * 3);
-        vbb.order(ByteOrder.nativeOrder());
-        _vertexBuffer = vbb.asFloatBuffer();
-
-        for (int j = 0; j < faces.size(); j++) {
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3)));
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 1)));
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 2)));
-        }
-
-        _vertexBuffer.position(0);
-
-        if (vertices.get(1) < -4.00f) isVisible = false;
+        posX += 0.6f;
+//        for (int i = 0; i < vertices.size(); i += 3) {
+//            vertices.set(i, vertices.get(i) - 0.55f);
+//        }
+//        ByteBuffer vbb = ByteBuffer.allocateDirect(faces.size() * 4 * 3);
+//        vbb.order(ByteOrder.nativeOrder());
+//        _vertexBuffer = vbb.asFloatBuffer();
+//
+//        for (int j = 0; j < faces.size(); j++) {
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3)));
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 1)));
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 2)));
+//        }
+//
+//        _vertexBuffer.position(0);
+//
+//        if (vertices.get(1) < -4.00f) isVisible = false;
     }
 
     public void goRight(){
-        for (int i = 0; i < vertices.size(); i += 3) {
-            vertices.set(i, vertices.get(i) + 0.55f);
-        }
-        ByteBuffer vbb = ByteBuffer.allocateDirect(faces.size() * 4 * 3);
-        vbb.order(ByteOrder.nativeOrder());
-        _vertexBuffer = vbb.asFloatBuffer();
-
-        for (int j = 0; j < faces.size(); j++) {
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3)));
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 1)));
-            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 2)));
-        }
-
-        _vertexBuffer.position(0);
-
-        if (vertices.get(1) < -4.00f) isVisible = false;
+        posX -= 0.6f;
+//        for (int i = 0; i < vertices.size(); i += 3) {
+//            vertices.set(i, vertices.get(i) + 0.55f);
+//        }
+//        ByteBuffer vbb = ByteBuffer.allocateDirect(faces.size() * 4 * 3);
+//        vbb.order(ByteOrder.nativeOrder());
+//        _vertexBuffer = vbb.asFloatBuffer();
+//
+//        for (int j = 0; j < faces.size(); j++) {
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3)));
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 1)));
+//            _vertexBuffer.put(vertices.get((int) (faces.get(j).Vi * 3 + 2)));
+//        }
+//
+//        _vertexBuffer.position(0);
+//
+//        if (vertices.get(1) < -4.00f) isVisible = false;
     }
 
 

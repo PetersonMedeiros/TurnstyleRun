@@ -12,6 +12,7 @@ import com.threed.jpct.FrameBuffer;
 import com.threed.jpct.World;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -22,10 +23,12 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class Renderer implements GLSurfaceView.Renderer{
 
-    private MainCharacter mainChar;
-    private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public MainCharacter mainChar;
+    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
     Context context;
+
+    Random r = new Random(System.currentTimeMillis());
 
     private int hexColor = 0xc0392a;
     private float color[] = {1.0f, 1.0f, 1.0f, 1.0f};
@@ -36,21 +39,20 @@ public class Renderer implements GLSurfaceView.Renderer{
     private final float[] mProjectionMatrix = new float[16];
     private final float[] mViewMatrix = new float[16];
 
+    Surface s;
+    RendererThread rThread;
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public Renderer(Context context) {
+    public Renderer(Context context, Surface s) {
         // Set up the data-array buffers for these shapes ( NEW )
         mainChar = new MainCharacter();
+        this.s = s;
 
-        for(int i=0;i<3;i++){
-            Enemy enemy = new Enemy(context);
-            enemies.add(enemy);
-        }
-        enemies.get(0).goLeft();
-        enemies.get(2).goRight();
-
+        rThread = new RendererThread(this);
 
         this.context = context;
+        addEnemies();
     }
 
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -72,12 +74,13 @@ public class Renderer implements GLSurfaceView.Renderer{
         // enable the differentiation of which side may be visible
         gl.glEnable(GL10.GL_CULL_FACE);
         // which is the front? the one which is drawn counter clockwise
-        gl.glFrontFace(GL10.GL_CCW);
+        gl.glFrontFace(GL10.GL_CW);
         // which one should NOT be drawn
         gl.glCullFace(GL10.GL_BACK); //
 
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
+        rThread.start();
     }
 
     public void onDrawFrame(GL10 gl) {
@@ -101,10 +104,6 @@ public class Renderer implements GLSurfaceView.Renderer{
         mainChar.draw(gl, mMVPMatrix);
         ArrayList<Enemy> remover = new ArrayList<Enemy>();
         for(int i=0;i<enemies.size();i++){
-            enemies.get(i).goDown();
-            if(i == 1){
-                enemies.get(i).rotate();
-            }
             if(enemies.get(i).isVisible) {
                 enemies.get(i).draw(gl, mMVPMatrix);
             }else{
@@ -112,6 +111,7 @@ public class Renderer implements GLSurfaceView.Renderer{
             }
         }
         for(int i=0;i<remover.size();i++){
+            remover.get(i).running = false;
             enemies.remove(remover.get(i));
         }
         remover.clear();
@@ -131,16 +131,15 @@ public class Renderer implements GLSurfaceView.Renderer{
 
     public void changeColor(){
         boolean boo = false;
-        int i = 0x4FEF3;
-        color[0] = Color.red(hexColor)/255f - Color.red(i)/255f;
-        color[1] = Color.green(hexColor)/255f - Color.green(i)/255f;
-        color[2] = Color.blue(hexColor)/255f - Color.blue(i)/255f;
+        int i = 1;
 
-        if(hexColor == 0xc0392b) boo = false;
-        if(hexColor == 0x8e44ad) boo = true;
+        color[0] = Color.red(hexColor)/1100f;
+        color[1] = Color.green(hexColor)/255f;
+        color[2] = Color.blue(hexColor)/1100f;
 
-        if(boo) hexColor = hexColor + i;
-        else hexColor = hexColor - i;
+        if(hexColor == 0x727a17) i = -1;
+        if(hexColor == 0x414d0b) i = 1;
+        hexColor = hexColor+i;
     }
 
     public void moveLeft(){
@@ -149,5 +148,23 @@ public class Renderer implements GLSurfaceView.Renderer{
 
     public void moveRight(){
         mainChar.moveRight();
+    }
+
+    public void addEnemies(){
+        if(enemies.size() > 1){
+            return;
+        }
+
+        int goal = r.nextInt(3);
+        Enemy enemy = new Enemy(context, this);
+        enemy.goal = goal;
+        enemy.animacao = 8;
+        enemies.add(enemy);
+        enemy.goUp(200);
+        enemy.start();
+    }
+
+    public void stap(){
+
     }
 }

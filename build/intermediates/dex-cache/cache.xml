@@ -3,15 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\d2d764491942992463754bf38aec482f256ccfda\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6be02c32e28d5d432a9544de66ebbc7be9e84d8f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -20,22 +11,22 @@
         <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_0470e2e3d52d49173e6165fbecdac6341fa45fbf\classes.dex" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\raulg\.android\build-cache\d794f53e76478aa5ab44ec65e3c35eeed06cdecc\output\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_172843ea370de46f500d3ce78b9b185f527d4e5c\classes.dex" />
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_172843ea370de46f500d3ce78b9b185f527d4e5c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\c32ab5c4d9221acbf0354773d1bd802429d56e81\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\libs\jpct_ae.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1a6c37531346d67708a0c4ba5304a7bb7190729b\classes.dex" />
+        sha1="d6939dc58306229d8dbc5ef8582686c1ab772d84">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\jpct_ae_11b31dc6d347f495fbe9d70562c340f8725070cd.jar" />
     </item>
     <item
         is-multidex="true"
@@ -47,13 +38,13 @@
         <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\2\jpct_ae_11b31dc6d347f495fbe9d70562c340f8725070cd\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\0f5bf8dcf6b8692e921ba00aa02717ed5602388a\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\libs\com.mokiat.data.front-2.0.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7f153b399bd70b021bbfd7479adf551d0c9ff641\classes.dex" />
+        sha1="b686162f8d48ca7fc4c56eb9b72804662b192728">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\com.mokiat.data.front-2.0.0_714454e243f263a931c5aa937f71187dc198202d.jar" />
     </item>
     <item
         is-multidex="true"
@@ -65,67 +56,94 @@
         <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\2\com.mokiat.data.front-2.0.0_714454e243f263a931c5aa937f71187dc198202d\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\bb5151cf4090fbacd1436e0c819b66aec61dc78c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_fe7153531fb9b3843ad053514b60c3e721c8251c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\7d99b2f59a314008e7d82dd05b05178b1183bb85\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_dfbb5eb23fb38ace5f61a6924361e9a92476f5fb.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="2cf617ad6ff1db89a9b19921383daa986786ea07">
+        sha1="e79e5b1f2ad63f608240dfe1dcb9515dc8760b44">
         <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_95610821ac898b72a9170c89c8b35b124a5415de\classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\c32ab5c4d9221acbf0354773d1bd802429d56e81\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_65a168afb5302a5bc9ad0be5a2729abf69286650\classes.dex" />
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_1a6c37531346d67708a0c4ba5304a7bb7190729b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\f8ec5443c1bf1b6f527b805ca8907294c194cc5a\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15a5f9bb001462458a6378c279544087be68bde3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\raulg\.android\build-cache\13505fdf689523a0599e31ab711f001c3e32ba27\output\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_414f48071ae17244c897073882583ce2db879a76\classes.dex" />
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_414f48071ae17244c897073882583ce2db879a76.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\bb5151cf4090fbacd1436e0c819b66aec61dc78c\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\raulg\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fe7153531fb9b3843ad053514b60c3e721c8251c\classes.dex" />
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_65a168afb5302a5bc9ad0be5a2729abf69286650.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="C:\Users\raulg\.android\build-cache\0f8c822d9ed0d5ab373e139f8911f0be658c4e2f\output\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1beb28804fa7b4bbb8dd0ae696bb1df0959be0e7\classes.dex" />
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_1beb28804fa7b4bbb8dd0ae696bb1df0959be0e7.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\raulg\.android\build-cache\7d99b2f59a314008e7d82dd05b05178b1183bb85\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\0f5bf8dcf6b8692e921ba00aa02717ed5602388a\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dfbb5eb23fb38ace5f61a6924361e9a92476f5fb\classes.dex" />
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_7f153b399bd70b021bbfd7479adf551d0c9ff641.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\d2d764491942992463754bf38aec482f256ccfda\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_6be02c32e28d5d432a9544de66ebbc7be9e84d8f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\raulg\.android\build-cache\f8ec5443c1bf1b6f527b805ca8907294c194cc5a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\raulg\OneDrive\Documentos\GitHub\TurnstyleRun\app\build\intermediates\pre-dexed\debug\classes_15a5f9bb001462458a6378c279544087be68bde3.jar" />
     </item>
 
 </items>
