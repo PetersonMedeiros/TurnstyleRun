@@ -8,6 +8,7 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -35,6 +36,7 @@ class Faces{
 public class Enemy extends Thread{
 
     Context context;
+    ArrayList<Particle> particulas = new ArrayList<Particle>();
 
     ArrayList<Float> vertices = new ArrayList<>();
     ArrayList<Float> normals = new ArrayList<>();
@@ -107,9 +109,36 @@ public class Enemy extends Thread{
                 goDown(r.mainChar.pos);
                 if(animacao > 0){
                     rotate();
+                    criarParticulas(10);
                     animacao--;
                 }
             }
+        }
+    }
+
+    public void criarParticulas(int num){
+        Random r = new Random(System.currentTimeMillis());
+        for(int i=0;i<num;i++){
+            float pos1 = (r.nextFloat()* 0.25f) - 0.125f;
+            float pos2 = (r.nextFloat()* 0.25f) - 0.125f;
+            float pos3 = (r.nextFloat()* 0.25f) - 0.125f;
+            if(goal == 1){
+                goLeft();
+
+            }else if(goal == 2){
+                goRight();
+            }
+            float posX = this.posX;
+            if(goal == 1){
+                goRight();
+
+            }else if(goal == 2){
+                goLeft();
+            }
+
+
+            Particle p = new Particle(posX + pos1,posY + pos2,posZ + pos3,(r.nextFloat() * 0.02f) - 0.01f,(r.nextFloat() * 0.02f) - 0.01f,(r.nextFloat() * 0.02f) - 0.01f);
+            particulas.add(p);
         }
     }
 
@@ -170,6 +199,14 @@ public class Enemy extends Thread{
         gl.glRotatef(-rAux, 0, 0, 1);
         gl.glTranslatef(-posX,-posY,-posZ);
         goLeft();
+        ArrayList<Particle> remover = new ArrayList<Particle>();
+        for(int i=0;i<particulas.size();i++){
+            if(particulas.get(i).timeToDie <= 0){
+                remover.add(particulas.get(i));
+            }
+            particulas.get(i).draw(gl, mvpMatrix);
+        }
+        particulas.removeAll(remover);
     }
 
     public void goUp(int val){
@@ -203,7 +240,7 @@ public class Enemy extends Thread{
         if(posY < -1f){
             Log.d(Integer.toString(charPos), Integer.toString(goal));
             if((goal == 1 && charPos < -6) || (goal == 0 && charPos <6 && charPos >= -6 ) || (goal == 2 && charPos >= 6)){
-                this.animacao = 10;
+                this.animacao = 20;
                 ganhou = true;
             }else if(!ganhou){
                 r.rThread.running = false;
