@@ -117,6 +117,8 @@ public class Enemy extends Thread{
     }
 
     public void criarParticulas(int num){
+        if(particulas.size() > 300)
+            return;
         Random r = new Random(System.currentTimeMillis());
         for(int i=0;i<num;i++){
             float pos1 = (r.nextFloat()* 0.25f) - 0.125f;
@@ -207,6 +209,7 @@ public class Enemy extends Thread{
             particulas.get(i).draw(gl, mvpMatrix);
         }
         particulas.removeAll(remover);
+        remover.clear();
     }
 
     public void goUp(int val){
@@ -242,6 +245,7 @@ public class Enemy extends Thread{
             if((goal == 1 && charPos < -6) || (goal == 0 && charPos <6 && charPos >= -6 ) || (goal == 2 && charPos >= 6)){
                 this.animacao = 20;
                 ganhou = true;
+                r.pontuacao += 3.8f;
             }else if(!ganhou){
                 r.rThread.running = false;
             }

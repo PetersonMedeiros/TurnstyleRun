@@ -1,7 +1,11 @@
 package com.example.raul.turnstylerun;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.opengl.Matrix;
@@ -29,6 +33,8 @@ public class Renderer implements GLSurfaceView.Renderer{
     Context context;
 
     Random r = new Random(System.currentTimeMillis());
+
+    public double pontuacao = 0;
 
     private int hexColor = 0xc0392a;
     private float color[] = {1.0f, 1.0f, 1.0f, 1.0f};
@@ -110,10 +116,7 @@ public class Renderer implements GLSurfaceView.Renderer{
                 remover.add(enemies.get(i));
             }
         }
-        for(int i=0;i<remover.size();i++){
-            remover.get(i).running = false;
-            enemies.remove(remover.get(i));
-        }
+        enemies.removeAll(remover);
         remover.clear();
     }
 

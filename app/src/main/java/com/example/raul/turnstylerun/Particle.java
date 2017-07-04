@@ -26,14 +26,14 @@ public class Particle {
     };
 
     static float[] colors = {
-            0.93f, 0.91f, 0.66f, 0.4f, // point 0 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 1 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 2 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 3 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 4 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 5 blue
-            0.93f, 0.91f, 0.66f, 0.4f, // point 6 blue
-            0.93f, 0.91f, 0.66f, 0.4f  // point 7 blue
+            238f, 232f, 170f, 0.4f, // point 0 blue
+            238f, 232f, 170f, 0.4f, // point 1 blue
+            238f, 232f, 170f, 0.4f, // point 2 blue
+            238f, 232f, 170f, 0.4f, // point 3 blue
+            238f, 232f, 170f, 0.4f, // point 4 blue
+            238f, 232f, 170f, 0.4f, // point 5 blue
+            238f, 232f, 170f, 0.4f, // point 6 blue
+            238f, 232f, 170f, 0.4f  // point 7 blue
     };
 
     static short[] indices = new short[] {

@@ -37,14 +37,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="208" column="38" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
+            <state relative-caret-position="2708">
+              <caret line="248" column="19" selection-start-line="248" selection-start-column="19" selection-end-line="248" selection-end-column="19" />
               <folding>
                 <element signature="e#801#811#0" expanded="true" />
-                <element signature="e#5849#5859#0" expanded="true" />
+                <element signature="e#5905#5915#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +53,8 @@
       <file leaf-file-name="Particle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Particle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+            <state relative-caret-position="544">
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,12 +94,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Renderer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Renderer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Renderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="101" column="22" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="-369">
+              <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+              <folding>
+                <element signature="e#815#822#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,12 +109,9 @@
       <file leaf-file-name="RendererThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/RendererThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-              <folding>
-                <element signature="e#275#276#0" expanded="false" />
-                <element signature="e#301#302#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="408">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1971,11 +1970,11 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Surface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/MainCharacter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/RendererThread.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/ParticleSystem.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Renderer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Particle.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/RendererThread.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Enemy.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Renderer.java" />
       </list>
     </option>
   </component>
@@ -2503,7 +2502,7 @@
           <caret line="299" column="21" selection-start-line="299" selection-start-column="21" selection-end-line="299" selection-end-column="21" />
           <folding>
             <element signature="e#801#811#0" expanded="true" />
-            <element signature="e#5849#5859#0" expanded="true" />
+            <element signature="e#5905#5915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2546,7 +2545,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="114" column="43" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#815#822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2554,10 +2555,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding>
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2567,7 +2565,7 @@
           <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
           <folding>
             <element signature="e#801#811#0" expanded="true" />
-            <element signature="e#5849#5859#0" expanded="true" />
+            <element signature="e#5905#5915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2602,7 +2600,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="e#815#822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2610,10 +2610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2623,7 +2620,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#801#811#0" expanded="true" />
-            <element signature="e#5849#5859#0" expanded="true" />
+            <element signature="e#5905#5915#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2658,7 +2655,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2312">
           <caret line="156" column="29" selection-start-line="156" selection-start-column="29" selection-end-line="156" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#815#822#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2666,10 +2665,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2716,17 +2712,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/RendererThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding>
-            <element signature="e#275#276#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -2761,14 +2746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Renderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="101" column="22" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/MainCharacter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -2779,8 +2756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Particle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+        <state relative-caret-position="544">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2789,11 +2766,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="208" column="38" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
+        <state relative-caret-position="2708">
+          <caret line="248" column="19" selection-start-line="248" selection-start-column="19" selection-end-line="248" selection-end-column="19" />
           <folding>
             <element signature="e#801#811#0" expanded="true" />
-            <element signature="e#5849#5859#0" expanded="true" />
+            <element signature="e#5905#5915#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/RendererThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/raul/turnstylerun/Renderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="115" column="44" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+          <folding>
+            <element signature="e#815#822#0" expanded="true" />
           </folding>
         </state>
       </provider>

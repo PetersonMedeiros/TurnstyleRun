@@ -27,7 +27,7 @@ public class RendererThread extends Thread {
                 r.s.requestRender();
             }
 
-            if (tempoAtual >= time + 3000) {
+            if (tempoAtual >= time + 1500) {
                 time = tempoAtual;
                 r.addEnemies();
             }
